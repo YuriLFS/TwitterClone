@@ -1,0 +1,11 @@
+{
+    "post" : [
+        { "id": "1", "ApelidoUsuario": "Marshall Lee", "NomeUsuario": "TheVampireKing", "QuantComentarios": 32, "QuantRePostagem": 41 , "QuantCurtidas": 99, "FotoPerfil": "src/assets/marshall.jpg", "Tweet": "Ultimamente tenho pensado em criar algumas músicas..."  },
+        { "id": "2", "ApelidoUsuario": "Marceline", "NomeUsuario": "TheVampireQueen", "QuantComentarios": 166, "QuantRePostagem": 86 , "QuantCurtidas": 230, "FotoPerfil": "src/assets/marceline.jpg", "Tweet": "Talvez eu deva fazer uma viagem com a Bonnie." },
+        { "id": "3", "ApelidoUsuario": "Lain", "NomeUsuario": "SerialLain", "QuantComentarios": 999, "QuantRePostagem": 999 , "QuantCurtidas": 999, "FotoPerfil": "src/assets/lai.jpg", "Tweet": "A internet que é a verdadeira realidade" },
+        { "id": "4", "ApelidoUsuario": "Alan", "NomeUsuario": "CheseLover", "QuantComentarios": 0, "QuantRePostagem": 0 , "QuantCurtidas": 3, "FotoPerfil": "src/assets/alan.jpg", "Tweet": "Eu só queria meu pedaço de queijo" },
+        { "id": "5", "ApelidoUsuario": "Neon", "NomeUsuario": "White_Neon", "QuantComentarios": 3, "QuantRePostagem": 0 , "QuantCurtidas": 5, "FotoPerfil": "src/assets/neon.jpg", "Tweet": "Que trabalho cansativo, espero que a recompensa seja das boas mesmo... Se não for aqueles narizes empinados vão me pagar..." },
+        { "id": "6", "ApelidoUsuario": "V", "NomeUsuario": "NeverFadeAway", "QuantComentarios": 20, "QuantRePostagem": 3 , "QuantCurtidas": 33, "FotoPerfil": "src/assets/v.jpg", "Tweet": "E vamos passar mais um fim de serviço no After Life" },
+        { "id": "7", "ApelidoUsuario": "Sunny", "NomeUsuario": "Sunny.Cat", "QuantComentarios": 4, "QuantRePostagem": 0 , "QuantCurtidas": 6, "FotoPerfil": "src/assets/omori.jpg", "Tweet": "Aprendi uma música nova no violino." }
+    ]
+}
