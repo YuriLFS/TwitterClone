@@ -1,4 +1,4 @@
-import { ArrowsClockwise, BookmarkSimple, ChatCircle, Heart, ShareNetwork } from "@phosphor-icons/react";
+import { ArrowsClockwise, BookmarkSimple, ChatCircle, DotsThree, Heart, ShareNetwork } from "@phosphor-icons/react";
 import { TimeLineBodyProps } from "./timeLineBody";
 import { useState } from "react";
 
@@ -37,17 +37,18 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
                     </div>
                 </div>
             </div>
+
             {/* Componente de Resposta */}
             <div className="w-full border-b border-gray-600 p-3">
                 <div className="grid grid-cols-12 gap-3">
                     <div className="col-span-1 flex justify-end">
-                        <img src="https://github.com/YuriLFS.png" alt="" className="rounded-full w-10 h-10"/>
+                        <img src="https://github.com/YuriLFS.png" alt="" className="rounded-full w-14 h-14"/>
                     </div>
-                    <div className="col-span-11 space-y-1 overflow-hidden">
+                    <div className="col-span-11 space-y-1">
                         <div className="justify-between flex">
                             <div>
                                 <div className="flex gap-2">
-                                    <h2>{ApelidoUsuario}</h2>
+                                    <h2 className="font-semibold">{ApelidoUsuario}</h2>
                                     <h2>@{NomeUsuario}</h2>
                                     <h2>Data</h2>
                                 </div>
@@ -55,13 +56,15 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
                                     Em resposta a
                                 </div>
                             </div>
-                            <div>
-                                ...
-                            </div>
+                            <button>
+                                <DotsThree />
+                            </button>
                         </div>
-                        <div className="max-h-24">
+
+                        <div className="break-before-auto">
                             Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto 
                         </div>
+
                         <div className="flex justify-between">
                             <div className="flex gap-16">
                                 <div className="flex items-center gap-2">
@@ -102,6 +105,7 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </>

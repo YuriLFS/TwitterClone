@@ -1,4 +1,4 @@
-import { ArrowsClockwise, Bookmark, BookmarkSimple, ChatCircle, DotsThree, Heart, Share, ShareNetwork } from "@phosphor-icons/react";
+import { ArrowsClockwise, BookmarkSimple, ChatCircle, DotsThree, Heart, ShareNetwork } from "@phosphor-icons/react";
 import { PropsWithChildren, useState } from "react";
 
 export interface TimeLineBodyProps extends PropsWithChildren {
@@ -13,16 +13,28 @@ export interface TimeLineBodyProps extends PropsWithChildren {
 export default function TimeLineBody({ ApelidoUsuario,NomeUsuario,QuantComentarios,QuantCurtidas,QuantRePostagem,FotoPerfil,children }: TimeLineBodyProps) {
 
     const [fav, setFav] = useState(false)
+    const [curtidas, setCurtidas] = useState(QuantCurtidas)
     const [reTwt, setReTwt] = useState(false)
+    const [rePostagens, setRePostagens] = useState(QuantRePostagem);
     const [salvo, setSalvo] = useState(false)
 
     const onFav = () => {
-        setFav(!fav)
-    }
+        if (fav) {
+            setCurtidas(curtidas - 1);
+        } else {
+            setCurtidas(curtidas + 1);
+        }
+        setFav(!fav);
+    };
 
     const onReTwt = () => {
-        setReTwt(!reTwt)
-    }
+        if (reTwt) {
+            setRePostagens(rePostagens - 1);
+        } else {
+            setRePostagens(rePostagens + 1);
+        }
+        setReTwt(!reTwt);
+    };
 
     const onSalvo = () => {
         setSalvo(!salvo)
@@ -58,18 +70,13 @@ export default function TimeLineBody({ ApelidoUsuario,NomeUsuario,QuantComentari
                                     <button onClick={onReTwt}>
                                         <ArrowsClockwise className={`${ reTwt ? "text-green-600" : "text-white" }`} /> 
                                     </button>   
-                                    <p>{QuantRePostagem}</p>
+                                    <p>{rePostagens}</p>
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <button onClick={onFav}>
-                                        {
-                                            fav ?
-                                            <Heart weight="fill" className="text-red-600"/>
-                                            :
-                                            <Heart />
-                                        }
+                                        {fav ? <Heart weight="fill" className="text-red-600" /> : <Heart />}
                                     </button>
-                                    <p>{QuantCurtidas}</p>
+                                    <p>{curtidas}</p>
                                 </div>
                             </div>
                             <div className="flex gap-6">

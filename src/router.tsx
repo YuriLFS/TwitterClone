@@ -5,6 +5,7 @@ import PaginaNotifications from "./pages/paginaNotificacations"
 import PaginaMessage from "./pages/paginaMessage"
 import PaginaRascunho from "./pages/paginaRascunho"
 import PaginaNotFound from "./pages/paginaNotFound"
+import PaginaPerfil from "./pages/paginaProfile"
 
 const routes: RouteObject[] = [
     {
@@ -33,7 +34,7 @@ const routes: RouteObject[] = [
     },
     {
         path: "/profile",
-        element: <PaginaNotifications />
+        element: <PaginaPerfil />
     },
     {
         path: "/more",

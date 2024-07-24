@@ -1,32 +1,43 @@
-import { Pagination,PaginationContent,PaginationItem,PaginationLink } from "@/components/ui/pagination"
+import { Pagination,PaginationContent,PaginationItem } from "@/components/ui/pagination"
+import { useState } from "react"
+import BodyNotifications from "./bodyNotifications";
+import BodyMentions from "./bodyMentions";
 
 export default function NotificationsHeader() {
-    return(
-        <Pagination>
-            <PaginationContent className="grid grid-cols-2 text-center py-2 border-b border-gray-600 w-full">
-                <PaginationItem className="border-r border-gray-600">
-                    <button>
-                        Todos 
-                    </button> 
-                </PaginationItem>
-                <PaginationItem>
-                    <button>
-                        Menções
-                    </button> 
-                </PaginationItem>
-            </PaginationContent>
-        </Pagination>
-        // <div className="grid grid-cols-2 text-center border-b border-gray-600 py-2">
-        //     <div className="border-r border-gray-600">
-        //         <p className="underline text-azul-twitter">
-        //             Todos
-        //         </p>
-        //     </div>
-        //     <div >
-        //         <p>
-        //             Menções
-        //         </p>
-        //     </div>
-        // </div>
-    )
+    const [activeTab, setActiveTab] = useState("todos");
+
+    const handleTabClick = (tabName: string) => {
+        setActiveTab(tabName);
+    };
+
+    return (
+        <>
+            <Pagination>
+                <PaginationContent className="grid grid-cols-2 text-center py-2 border-b border-gray-600 w-full">
+                    <PaginationItem className="border-r border-gray-600">
+                        <button 
+                            onClick={() => handleTabClick("todos")} 
+                            className={`font-medium text-lg ${activeTab === "todos" ? "underline text-azul-twitter" : ""}`}
+                        >
+                            Todos
+                        </button>
+                    </PaginationItem>
+                    <PaginationItem>
+                        <button 
+                            onClick={() => handleTabClick("menções")} 
+                            className={`font-medium text-lg ${activeTab === "menções" ? "underline text-azul-twitter" : ""}`}
+                        >
+                            Menções
+                        </button>
+                    </PaginationItem>
+                </PaginationContent>
+            </Pagination>
+            {activeTab === "todos" && (
+                <BodyNotifications ApelidoUsuario="aaaaa" NomeUsuario="aaaaaa" QuantComentarios={2} QuantCurtidas={1} QuantRePostagem={0} FotoPerfil="https://github.com/YuriLFS.png"/>
+            )}
+            {activeTab === "menções" && (
+                <BodyMentions />
+            )}
+        </>
+    );
 }

@@ -15,7 +15,6 @@ interface Post {
 
 export default function PaginaPrincipalComponente({}: Post) {
 
-    const [theme, setTheme] = useState(true)
     const [posts, setPosts] = useState<Post[]>([]);
 
     const fetchPosts = async () => {
