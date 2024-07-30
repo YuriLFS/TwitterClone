@@ -118,7 +118,7 @@ export default function SideBar() {
                 </div>
             </div>
             <div className={`absolute top-1/4 left-1/3 ${twtShow ? "block" : "hidden"}`}>
-                <TweetBox onClose={onClose}/>
+                <TweetBox isOpen={twtShow} onClose={onClose}/>
             </div>
         </>
     )

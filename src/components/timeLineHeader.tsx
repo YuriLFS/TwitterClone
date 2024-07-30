@@ -1,19 +1,55 @@
+import { X } from "@phosphor-icons/react";
 import { ImagePlus } from "lucide-react";
+import { useState } from "react";
 
 export default function TimeLineHeader() {
+
+    const [imageUrl, setImageUrl] = useState('');
+
+    const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0]; // Garante que o arquivo existe antes de prosseguir
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                setImageUrl(event.target?.result as string); // Atualiza a URL da imagem
+            };
+            reader.readAsDataURL(file); // Lê o arquivo como Data URL
+        }
+    };
+
+    const handleCloseImage = () => {
+        setImageUrl('')
+    }
 
     return(
         <div className="border-b border-gray-600">
             <div className="px-3 py-3">
                 <div className="flex pb-2 gap-1">
-                    <img src="https://github.com/YuriLFS.png" alt="Foto Usuário" className="rounded-full w-14 h-14" />
-                    <textarea maxLength={655} className="w-full h-20 px-1 resize-none break-before-all bg-transparent focus:outline-none" placeholder="Whats happening?"/>
+                    <img src={"https://github.com/YuriLFS.png"} alt="Foto Usuário" className="rounded-full w-14 h-14" />
+                    <div className="space-y-2 w-full">
+                        <textarea maxLength={655} className="w-full h-20 px-1 resize-none break-before-all bg-transparent focus:outline-none" placeholder="Whats happening?"/>
+                        {imageUrl && (
+                            <div>                                
+                                <button onClick={handleCloseImage} className="absolute rounded-full bg-gray-600 bg-opacity-50 hover:bg-opacity-100 w-6 h-6 flex items-center justify-center">
+                                    <X />
+                                </button>
+                                
+                                <img className="max-w-96 max-h-64 rounded-lg" src={imageUrl}/>
+                            </div>
+                        )}
+                    </div>
                 </div>
                 <div className="flex justify-between">
-                    <button className="pl-16 hover:text-azul-twitter">
+                    <input type="file" accept="image/*" hidden onChange={handleFileSelect} />
+                    <button onClick={() => {
+                        const fileInput = document.querySelector('input[type="file"]');
+                        if (fileInput instanceof HTMLInputElement) {
+                            fileInput.click();
+                        }
+                    }} aria-label="Add image" className="pl-16 hover:text-blue-500">
                         <ImagePlus />
                     </button>
-                    <button className="w-24 h-9 bg-azul-twitter rounded-full text- font-semibold text-white hover:brightness-90">Tweet</button>
+                    <button aria-label="Publish tweet" className="w-24 h-9 bg-blue-500 rounded-full text-white font-semibold hover:brightness-90">Tweet</button>
                 </div>
             </div>
         </div>

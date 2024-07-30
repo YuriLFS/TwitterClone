@@ -1,7 +1,6 @@
 import { PropsWithChildren, useState } from "react";
 import SideBar from "./sidebar";
 import { Sparkle } from "lucide-react";
-import TweetBox from "./tweetBox";
 
 interface LayoutProps extends PropsWithChildren {
     NomeDaPagina: string
