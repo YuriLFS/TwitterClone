@@ -8,31 +8,31 @@ export default function PaginaMoreComponent() {
             icone: <User height={44} width={28}/>,
             titulo: "Sua conta",
             descricao: "Veja informações sobre a sua conta,baixe um arquivo com seus dados ou saiba mais sobre as opções de desativação de conta.",
-            link: "",
+            link: "https://trex-runner.com/",
         },
         {
             icone: <Lock height={44} width={28}/>,
             titulo: "Segurança e acesso à conta",
             descricao: "Gerencie a segurança da sua conta e monitore o uso deka,inclusive os aplicativos conectados a ela.",
-            link: "",
+            link: "http://www.hackertyper.com/",
         },
         {
             icone: <Bell height={44} width={28}/>,
             titulo: "Notificações",
             descricao: "Selecione os tipos de notificações que você recebe sobre atividades,interesses e recomendações.",
-            link: "",
+            link: "https://soundscape.world/",
         },
         {
             icone: <PersonSimpleCircle height={44} width={28}/>,
             titulo: "Acessibilidade",
             descricao: "Gerencie a forma como o conteúdo no site é exibido para você.",
-            link: "",
+            link: "https://clicking.toys/flip-grid/neat-nine/3-holes/",
         },
         {
             icone: <DotsThreeCircle height={44} width={28}/> ,
             titulo: "Recursos adicionais",
             descricao: "Verifique em outros lugares informações úteis para saber mais sobre os produtos e serviços do site.",
-            link: "",
+            link: "https://longdogechallenge.com/",
         },
         {
             icone: <Question height={44} width={28}/>,
@@ -48,9 +48,9 @@ export default function PaginaMoreComponent() {
                 <input className="rounded-full bg-gray-600/50 w-full px-4 py-2" placeholder="Buscar configuração"/>
             </div>
             <div>                
-                {opcoes.map((opcao) => {
+                {opcoes.map((opcao, index) => {
                     return(
-                        <Link target="_blank" to={opcao.link}>
+                        <Link key={index} target="_blank" to={opcao.link}>
                             <button className="flex p-5 gap-7 h-28 w-full">
                                 <div className="flex">
                                     {opcao.icone}

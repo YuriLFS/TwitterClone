@@ -1,27 +1,35 @@
-import ChatBox from "@/components/chatBox";
-import ChatBoxBottom from "@/components/chatBoxBottom";
-import ChatBoxHeader from "@/components/chatBoxHeader";
 import MessageBody from "@/components/messageBody";
+import { useEffect, useState } from "react";
+import ChatBoxComponent from "@/components/chatBoxComponent";
 
-export default function PaginaMessageComponent() {
+interface Post {
+    ApelidoUsuario: string;
+    NomeUsuario: string;
+    FotoPerfil: string,
+}
+
+export default function PaginaMessageComponent({}:Post) {
+    
+    const [messages, setMessages] = useState<Post[]>([]);
+
+    const fetchMessage = async () => {
+        const response = await fetch('http://localhost:3000/chat');
+        const data = await response.json();
+        return data;
+    }
+
+    useEffect(() => {
+        fetchMessage().then(data => setMessages(data))
+    }, []);
+
     return(        
         <div className="grid grid-cols-3 h-full">
             <div className="overflow-auto max-h-[93vh] col-span-1">
-                <MessageBody ApelidoUsuario="Usuario1" NomeUsuario="Arroba1"/>
-                <MessageBody ApelidoUsuario="Usuario2" NomeUsuario="Arroba2"/>
-                <MessageBody ApelidoUsuario="Usuario3" NomeUsuario="Arroba3"/>
-                <MessageBody ApelidoUsuario="Usuario4" NomeUsuario="Arroba4"/>
-                <MessageBody ApelidoUsuario="Usuario5" NomeUsuario="Arroba5"/>
-                <MessageBody ApelidoUsuario="Usuario6" NomeUsuario="Arroba6"/>
-                <MessageBody ApelidoUsuario="Usuario7" NomeUsuario="Arroba7"/>
-                <MessageBody ApelidoUsuario="Usuario8" NomeUsuario="Arroba8"/>
-                <MessageBody ApelidoUsuario="Usuario9" NomeUsuario="Arroba9"/>
+                {messages.map((messages, index) => (
+                <MessageBody key={index} ApelidoUsuario={messages.ApelidoUsuario} NomeUsuario={messages.NomeUsuario} FotoPerfil={messages.FotoPerfil}/>
+                ))}
             </div>
-            <div className="col-span-2 border-l border-gray-600">
-                <ChatBoxHeader />
-                <ChatBox />
-                <ChatBoxBottom />
-            </div>
+            <ChatBoxComponent ApelidoUsuario="Usuario" NomeUsuario="Usuario" tituloUsuario="Usuario"/>
         </div>    
     )
 }

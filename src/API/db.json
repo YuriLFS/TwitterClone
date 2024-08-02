@@ -7,5 +7,16 @@
         { "id": "5", "ApelidoUsuario": "Neon", "NomeUsuario": "White_Neon", "QuantComentarios": 3, "QuantRePostagem": 0 , "QuantCurtidas": 5, "FotoPerfil": "src/assets/neon.jpg", "Tweet": "Que trabalho cansativo, espero que a recompensa seja das boas mesmo... Se não for aqueles narizes empinados vão me pagar..." },
         { "id": "6", "ApelidoUsuario": "V", "NomeUsuario": "NeverFadeAway", "QuantComentarios": 20, "QuantRePostagem": 3 , "QuantCurtidas": 33, "FotoPerfil": "src/assets/v.jpg", "Tweet": "E vamos passar mais um fim de serviço no After Life" },
         { "id": "7", "ApelidoUsuario": "Sunny", "NomeUsuario": "Sunny.Cat", "QuantComentarios": 4, "QuantRePostagem": 0 , "QuantCurtidas": 6, "FotoPerfil": "src/assets/omori.jpg", "Tweet": "Aprendi uma música nova no violino." }
+    ],
+    "chat" : [
+        { "id": "1",  "ApelidoUsuario": "Clove", "NomeUsuario": "LitchQueen", "FotoPerfil": "src/assets/clove.jpg"}, 
+        { "id": "2",  "ApelidoUsuario": "Viper", "NomeUsuario": "VenomSnake", "FotoPerfil": "src/assets/viper.jpg"},
+        { "id": "3",  "ApelidoUsuario": "Gekko", "NomeUsuario": "Etiquetador", "FotoPerfil": "src/assets/1a89a9f77b46c6c6ec863bcb6124b0ee.jpg"}, 
+        { "id": "4",  "ApelidoUsuario": "Harbor", "NomeUsuario": "JalKaSvaamee", "FotoPerfil": "src/assets/harbor.jpg"},
+        { "id": "5",  "ApelidoUsuario": "Yoru", "NomeUsuario": "Rifutodēmon", "FotoPerfil": "src/assets/yoru.png"},
+        { "id": "6",  "ApelidoUsuario": "Phoenix", "NomeUsuario": "JokesOver", "FotoPerfil": "src/assets/phoenix.jpg"},
+        { "id": "7",  "ApelidoUsuario": "Killjoy", "NomeUsuario": "Hühnerroboter", "FotoPerfil": "src/assets/killjoy.jpg"},
+        { "id": "8",  "ApelidoUsuario": "Raze", "NomeUsuario": "BombinhaBujão", "FotoPerfil": "src/assets/raze.jpg"},
+        { "id": "9",  "ApelidoUsuario": "Jett", "NomeUsuario": "Bulgogi", "FotoPerfil": "src/assets/jett.jpg"}
     ]
 }
