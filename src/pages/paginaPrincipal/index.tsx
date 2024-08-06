@@ -14,7 +14,7 @@ export default function PaginaPrincipal() {
                 Tweet=""
                 id=""
                 key={0}
-            /> 
-        </Layout>       
+            />
+        </Layout>
     )
 }

@@ -37,10 +37,6 @@ export default function Layout({ children, NomeDaPagina }:LayoutProps) {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="absolute top-1/4 left-1/3">
-                <TweetBox />
-            </div> */}
         </div>
     )
 }

@@ -7,7 +7,13 @@ interface Chat {
     ApelidoUsuario: string,
     NomeUsuario: string,
     FotoPerfil: string,
-    isSender: boolean
+    isSender: boolean,
+    descricao: string,
+    seguidores: number,
+    mensagemRecebida: string,
+    mensagemRecebida2: string,
+    mensagemEnviada: string,
+    mensagemEnviada2: string,
 }
 
 export default function PaginaMessageComponent() {
@@ -40,14 +46,14 @@ export default function PaginaMessageComponent() {
                     >
                         <img src={chatItem.FotoPerfil} alt={chatItem.ApelidoUsuario} className="h-12 w-12 rounded-full mr-4" />
                         <div className="w-full">
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 max-w-72 truncate">
                                 <p>{chatItem.ApelidoUsuario}</p>
                                 <p className="text-gray-500">@{chatItem.NomeUsuario}</p>
                                 <p className="text-gray-500">•</p>
-                                <p className="max-w-28 truncate text-gray-500">10 de setembro de 2024</p>                                                                
+                                <p className="text-gray-500">10 de setembro de 2024</p>                                                                
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">a</p>                                
+                                <p className="text-sm text-gray-500">Mensagem</p>                                
                             </div>
                         </div>
                     </div>
@@ -66,30 +72,47 @@ export default function PaginaMessageComponent() {
                             </div>
                             <p className="font-medium">{selectedChat.ApelidoUsuario}</p>
                             <p className="text-gray-500">@{selectedChat.NomeUsuario}</p>
-                            <p>descrição</p>
+                            <p>{selectedChat.descricao}</p>
                             <div className="flex text-center justify-center gap-2 text-gray-500">
                                 <p>ingressou em junho de 2024</p>
                                 <p>•</p>
-                                <p>9999999 seguidores</p>
+                                <p>{selectedChat.seguidores} seguidores</p>
                             </div>
                         </div>
                         <div className="p-2 max-h-96 overflow-auto">
-                            <div className="flex justify-end">
+                            <div className={`flex justify-end pb-1 ${selectedChat.mensagemRecebida ? "" : "hidden"}`}>
                                 <div>
-                                    <p className="bg-azul-twitter px-2 p-1 max-w-80 rounded-l-xl rounded-tr-xl">Sala de operações em 15 minutos!!</p>
-                                    <p className="text-xs text-gray-500 flex justify-end">8:45 AM</p>
+                                    <p className="bg-azul-twitter px-2 p-1 max-w-80 rounded-l-xl rounded-tr-xl">{selectedChat.mensagemRecebida}</p>
+                                    {/* <p className="text-xs text-gray-500 flex justify-end">8:45 AM</p> */}
                                 </div>
                             </div>
-                            <div className="flex justify-start">
+
+                            <div className={`flex justify-start pb-1 ${selectedChat.mensagemEnviada ? "" : "hidden"}`}>
                                 <div>
-                                    <p className="bg-gray-600 px-2 p-1 max-w-80 rounded-r-xl rounded-tl-xl">Ok, eu levo o café.</p>
-                                    <p className="text-xs text-gray-500 flex justify-start">8:46 AM</p>
+                                    <p className="bg-gray-600 px-2 p-1 max-w-80 rounded-r-xl rounded-tl-xl">{selectedChat.mensagemEnviada}</p>
+                                    {/* <p className="text-xs text-gray-500 flex justify-start">8:46 AM</p> */}
+                                </div>
+                            </div>
+                            
+                            <div className={`flex justify-end pb-1 ${selectedChat.mensagemRecebida2 ? "" : "hidden"}`}>
+                                <div>
+                                    <p className="bg-azul-twitter px-2 p-1 max-w-80 rounded-l-xl rounded-tr-xl">{selectedChat.mensagemRecebida2}</p>
+                                    {/* <p className="text-xs text-gray-500 flex justify-end">8:48 AM</p> */}
+                                </div>
+                            </div>
+
+                            <div className={`flex justify-start pb-1 ${selectedChat.mensagemEnviada2 ? "" : "hidden"}`}>
+                                <div>
+                                    <p className="bg-gray-600 px-2 p-1 max-w-80 rounded-r-xl rounded-tl-xl">{selectedChat.mensagemEnviada2}</p>
+                                    {/* <p className="text-xs text-gray-500 flex justify-start">8:53 AM</p> */}
                                 </div>
                             </div>
                         </div>
                         <div className="absolute bottom-3 flex items-center justify-center gap-1 px-3 pt-3">
                             <input type="text" className="w-[98vh] bg-transparent rounded-3xl border border-azul-twitter" />
-                            <PaperPlaneRight className="text-azul-twitter" width={17} height={17} weight="fill"/>
+                            <button>
+                                <PaperPlaneRight className="text-azul-twitter" width={17} height={17} weight="fill"/>
+                            </button>
                         </div>
                     </div>
                 )}
