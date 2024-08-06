@@ -9,14 +9,14 @@
         { "id": "7", "ApelidoUsuario": "Sunny", "NomeUsuario": "Sunny.Cat", "QuantComentarios": 4, "QuantRePostagem": 0 , "QuantCurtidas": 6, "FotoPerfil": "src/assets/omori.jpg", "Tweet": "Aprendi uma música nova no violino." }
     ],
     "chat" : [
-        { "id": "1",  "ApelidoUsuario": "Clove", "NomeUsuario": "LitchQueen", "FotoPerfil": "src/assets/clove.jpg"}, 
-        { "id": "2",  "ApelidoUsuario": "Viper", "NomeUsuario": "VenomSnake", "FotoPerfil": "src/assets/viper.jpg"},
-        { "id": "3",  "ApelidoUsuario": "Gekko", "NomeUsuario": "Etiquetador", "FotoPerfil": "src/assets/1a89a9f77b46c6c6ec863bcb6124b0ee.jpg"}, 
-        { "id": "4",  "ApelidoUsuario": "Harbor", "NomeUsuario": "JalKaSvaamee", "FotoPerfil": "src/assets/harbor.jpg"},
-        { "id": "5",  "ApelidoUsuario": "Yoru", "NomeUsuario": "Rifutodēmon", "FotoPerfil": "src/assets/yoru.png"},
-        { "id": "6",  "ApelidoUsuario": "Phoenix", "NomeUsuario": "JokesOver", "FotoPerfil": "src/assets/phoenix.jpg"},
-        { "id": "7",  "ApelidoUsuario": "Killjoy", "NomeUsuario": "Hühnerroboter", "FotoPerfil": "src/assets/killjoy.jpg"},
-        { "id": "8",  "ApelidoUsuario": "Raze", "NomeUsuario": "BombinhaBujão", "FotoPerfil": "src/assets/raze.jpg"},
-        { "id": "9",  "ApelidoUsuario": "Jett", "NomeUsuario": "Bulgogi", "FotoPerfil": "src/assets/jett.jpg"}
+        { "id": "1",  "ApelidoUsuario": "Clove", "NomeUsuario": "LitchQueen", "FotoPerfil": "src/assets/clove.jpg", "isSender": false}, 
+        { "id": "2",  "ApelidoUsuario": "Viper", "NomeUsuario": "VenomSnake", "FotoPerfil": "src/assets/viper.jpg", "isSender": false},
+        { "id": "3",  "ApelidoUsuario": "Gekko", "NomeUsuario": "Etiquetador", "FotoPerfil": "src/assets/1a89a9f77b46c6c6ec863bcb6124b0ee.jpg", "isSender": false}, 
+        { "id": "4",  "ApelidoUsuario": "Harbor", "NomeUsuario": "JalKaSvaamee", "FotoPerfil": "src/assets/harbor.jpg", "isSender": false},
+        { "id": "5",  "ApelidoUsuario": "Yoru", "NomeUsuario": "Rifutodēmon", "FotoPerfil": "src/assets/yoru.png", "isSender": false},
+        { "id": "6",  "ApelidoUsuario": "Phoenix", "NomeUsuario": "JokesOver", "FotoPerfil": "src/assets/phoenix.jpg", "isSender": false},
+        { "id": "7",  "ApelidoUsuario": "Killjoy", "NomeUsuario": "Hühnerroboter", "FotoPerfil": "src/assets/killjoy.jpg", "isSender": false},
+        { "id": "8",  "ApelidoUsuario": "Raze", "NomeUsuario": "BombinhaBujão", "FotoPerfil": "src/assets/raze.jpg", "isSender": false},
+        { "id": "9",  "ApelidoUsuario": "Jett", "NomeUsuario": "Bulgogi", "FotoPerfil": "src/assets/jett.jpg", "isSender": false}
     ]
 }

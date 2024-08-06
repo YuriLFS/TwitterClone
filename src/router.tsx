@@ -13,10 +13,10 @@ const routes: RouteObject[] = [
         path: "/",
         element: <PaginaPrincipal />,
     },
-    {
-        path: "/explore",
-        element: <PaginaExplore />
-    },
+    // {
+    //     path: "/explore",
+    //     element: <PaginaExplore />
+    // },
     {
         path: "/notifications",
         element: <PaginaNotifications />
@@ -25,14 +25,14 @@ const routes: RouteObject[] = [
         path: "/message",
         element: <PaginaMessage />
     },
-    {
-        path: "/bookmarks",
-        element: <PaginaNotifications />
-    },
-    {
-        path: "/lists",
-        element: <PaginaNotifications />
-    },
+    // {
+    //     path: "/bookmarks",
+    //     element: <PaginaNotifications />
+    // },
+    // {
+    //     path: "/lists",
+    //     element: <PaginaNotifications />
+    // },
     {
         path: "/profile",
         element: <PaginaPerfil />

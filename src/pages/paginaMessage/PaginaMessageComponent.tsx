@@ -1,35 +1,99 @@
-import MessageBody from "@/components/messageBody";
 import { useEffect, useState } from "react";
-import ChatBoxComponent from "@/components/chatBoxComponent";
+import { Info } from "lucide-react";
+import { PaperPlaneRight } from "@phosphor-icons/react";
 
-interface Post {
-    ApelidoUsuario: string;
-    NomeUsuario: string;
+interface Chat {
+    id: string,
+    ApelidoUsuario: string,
+    NomeUsuario: string,
     FotoPerfil: string,
+    isSender: boolean
 }
 
-export default function PaginaMessageComponent({}:Post) {
+export default function PaginaMessageComponent() {
     
-    const [messages, setMessages] = useState<Post[]>([]);
+    const [chat, setChat] = useState<Chat[]>([]);
+    const [selectedChat, setSelectedChat] = useState<Chat | null>(null);
 
-    const fetchMessage = async () => {
+    const fetchChat = async () => {
         const response = await fetch('http://localhost:3000/chat');
         const data = await response.json();
         return data;
     }
-
+    
     useEffect(() => {
-        fetchMessage().then(data => setMessages(data))
+        fetchChat().then(data => setChat(data));
     }, []);
 
-    return(        
-        <div className="grid grid-cols-3 h-full">
-            <div className="overflow-auto max-h-[93vh] col-span-1">
-                {messages.map((messages, index) => (
-                <MessageBody key={index} ApelidoUsuario={messages.ApelidoUsuario} NomeUsuario={messages.NomeUsuario} FotoPerfil={messages.FotoPerfil}/>
+    const handleChatClick = (chatItem: Chat) => {
+        setSelectedChat(chatItem);
+    };
+    
+    return (
+        <div className="grid grid-cols-3 h-[91Vh]">
+            <div className="w-full overflow-y-auto">          
+                {chat.map((chatItem, index) => (
+                    <div
+                        key={index}
+                        className={`bg-transparent border-b border-gray-600 flex p-4 cursor-pointer`}
+                        onClick={() => handleChatClick(chatItem)}
+                    >
+                        <img src={chatItem.FotoPerfil} alt={chatItem.ApelidoUsuario} className="h-12 w-12 rounded-full mr-4" />
+                        <div className="w-full">
+                            <div className="flex gap-2">
+                                <p>{chatItem.ApelidoUsuario}</p>
+                                <p className="text-gray-500">@{chatItem.NomeUsuario}</p>
+                                <p className="text-gray-500">•</p>
+                                <p className="max-w-28 truncate text-gray-500">10 de setembro de 2024</p>                                                                
+                            </div>
+                            <div>
+                                <p className="text-sm text-gray-500">a</p>                                
+                            </div>
+                        </div>
+                    </div>
                 ))}
             </div>
-            <ChatBoxComponent ApelidoUsuario="Usuario" NomeUsuario="Usuario" tituloUsuario="Usuario"/>
-        </div>    
-    )
+            <div className="w-full col-span-2 border-l border-gray-600">
+                {selectedChat && (
+                    <div>
+                        <div className="flex-col justify-center text-center items-center border-b border-gray-600 pb-10">
+                            <div className="flex justify-between p-3">
+                                <h2 className="font-medium text-lg">{selectedChat.ApelidoUsuario}</h2>
+                                <Info />
+                            </div>
+                            <div className="flex justify-center">
+                                <img src={selectedChat.FotoPerfil} alt={selectedChat.ApelidoUsuario} className="h-16 w-16 rounded-full" />
+                            </div>
+                            <p className="font-medium">{selectedChat.ApelidoUsuario}</p>
+                            <p className="text-gray-500">@{selectedChat.NomeUsuario}</p>
+                            <p>descrição</p>
+                            <div className="flex text-center justify-center gap-2 text-gray-500">
+                                <p>ingressou em junho de 2024</p>
+                                <p>•</p>
+                                <p>9999999 seguidores</p>
+                            </div>
+                        </div>
+                        <div className="p-2 max-h-96 overflow-auto">
+                            <div className="flex justify-end">
+                                <div>
+                                    <p className="bg-azul-twitter px-2 p-1 max-w-80 rounded-l-xl rounded-tr-xl">Sala de operações em 15 minutos!!</p>
+                                    <p className="text-xs text-gray-500 flex justify-end">8:45 AM</p>
+                                </div>
+                            </div>
+                            <div className="flex justify-start">
+                                <div>
+                                    <p className="bg-gray-600 px-2 p-1 max-w-80 rounded-r-xl rounded-tl-xl">Ok, eu levo o café.</p>
+                                    <p className="text-xs text-gray-500 flex justify-start">8:46 AM</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-3 flex items-center justify-center gap-1 px-3 pt-3">
+                            <input type="text" className="w-[98vh] bg-transparent rounded-3xl border border-azul-twitter" />
+                            <PaperPlaneRight className="text-azul-twitter" width={17} height={17} weight="fill"/>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
 }

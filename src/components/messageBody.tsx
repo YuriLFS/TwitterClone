@@ -2,6 +2,7 @@ interface MessageBodyProps {
     ApelidoUsuario: string,
     NomeUsuario: string,
     FotoPerfil: string,
+    onClick?: () => void;
 }
 
 

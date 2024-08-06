@@ -51,14 +51,14 @@ export default function SideBar() {
                             </a>
                         </button>
                     </div>
-                    <div>
+                    {/* <div>
                         <button>
                             <a href="/explore" className={`flex items-center text-2xl gap-2 ${isExplorePage ? "text-blue-500" : ""}`}>
                                 <Hash />
                                 Explore
                             </a>
                         </button>
-                    </div>
+                    </div> */}
                     <a href="/notifications" className={`flex items-center text-2xl gap-2 ${isNotificationPage ? "text-blue-500" : ""}`}>
                         {isNotificationPage ? 
                         <Bell weight="fill"/>
@@ -76,7 +76,7 @@ export default function SideBar() {
                             </a>
                         </button>
                     </div>
-                    <div>
+                    {/* <div>
                         <button>
                             <a href="/bookmarks" className={`flex items-center text-2xl gap-2 ${isBookmarks ? "text-blue-500" : ""}`}>
                                 {isBookmarks ?
@@ -87,15 +87,15 @@ export default function SideBar() {
                                 Bookmarks
                             </a>
                         </button>
-                    </div>
-                    <div>
+                    </div> */}
+                    {/* <div>
                         <button>
                             <a href="/lists" className={`flex items-center text-2xl gap-2 ${isList ? "text-blue-500" : ""}`}>
                                 <FileText />
                                 Lists
                             </a>
                         </button>
-                    </div>
+                    </div> */}
                     <div>
                         <button>
                             <a href="/profile" className={`flex items-center text-2xl gap-2 ${isProfile ? "text-blue-500" : ""}`}>

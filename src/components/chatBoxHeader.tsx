@@ -15,7 +15,7 @@ export default function ChatBoxHeader({tituloUsuario,ApelidoUsuario,NomeUsuario}
             </div>
             <div className="flex flex-col items-center justify-center w-full pb-10">
                 <div className="w-full max-w-md">
-                    <img className="rounded-full h-20 mx-auto" src="https://github.com/YuriLFS.png" alt="" />
+                    <img className="rounded-full h-20 mx-auto" src="src/assets/clove.jpg" alt="" />
                     <h2 className="font-semibold text-center">{ApelidoUsuario}</h2>
                     <h3 className="text-gray-500 text-center">@{NomeUsuario}</h3>
                     <div className="flex w-full justify-center">
