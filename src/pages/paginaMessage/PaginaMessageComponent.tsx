@@ -14,6 +14,7 @@ interface Chat {
     mensagemRecebida2: string,
     mensagemEnviada: string,
     mensagemEnviada2: string,
+    dataConversa: string,
 }
 
 export default function PaginaMessageComponent() {
@@ -50,10 +51,10 @@ export default function PaginaMessageComponent() {
                                 <p>{chatItem.ApelidoUsuario}</p>
                                 <p className="text-gray-500">@{chatItem.NomeUsuario}</p>
                                 <p className="text-gray-500">•</p>
-                                <p className="text-gray-500">10 de setembro de 2024</p>                                                                
+                                <p className="text-gray-500">{chatItem.dataConversa}</p>                                                                
                             </div>
                             <div>
-                                <p className="text-sm text-gray-500">Mensagem</p>                                
+                                <p className="text-sm text-gray-500 truncate max-w-72">{chatItem.mensagemEnviada}</p>                                
                             </div>
                         </div>
                     </div>
@@ -108,10 +109,10 @@ export default function PaginaMessageComponent() {
                                 </div>
                             </div>
                         </div>
-                        <div className="absolute bottom-3 flex items-center justify-center gap-1 px-3 pt-3">
+                        <div className="absolute bottom-3 flex items-center justify-center gap-1 pl-3 pt-3">
                             <input type="text" className="w-[98vh] bg-transparent rounded-3xl border border-azul-twitter" />
                             <button>
-                                <PaperPlaneRight className="text-azul-twitter" width={17} height={17} weight="fill"/>
+                                <PaperPlaneRight className="text-azul-twitter" size={23} weight="fill"/>
                             </button>
                         </div>
                     </div>

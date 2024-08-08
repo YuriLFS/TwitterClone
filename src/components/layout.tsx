@@ -1,6 +1,7 @@
 import { PropsWithChildren, useState } from "react";
 import SideBar from "./sidebar";
 import { Sparkle } from "lucide-react";
+import { GithubLogo } from "@phosphor-icons/react";
 
 interface LayoutProps extends PropsWithChildren {
     NomeDaPagina: string
@@ -27,9 +28,16 @@ export default function Layout({ children, NomeDaPagina }:LayoutProps) {
                     <div className="row-span-1">
                         <div className="px-3 flex justify-between h-full text-azul-twitter text-xl items-center border-b border-gray-600">
                             <h1 className="font-bold text-white">{NomeDaPagina}</h1>
-                            <button onClick={onClick}>
-                                <Sparkle />
-                            </button>
+                            <div className="space-x-5">
+                                <button className="border border-azul-twitter rounded-full p-1.5 hover:border-white hover:text-white hover:bg-azul-twitter">
+                                    <a target="_blank" href="https://github.com/YuriLFS">
+                                        <GithubLogo />
+                                    </a>
+                                </button>
+                                <button onClick={onClick}>
+                                    <Sparkle />
+                                </button>
+                            </div>                                
                         </div>
                     </div>
                     <div className="row-span-11">

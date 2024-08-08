@@ -22,14 +22,14 @@ export default function NotificationsHeader() {
                             Todos
                         </button>
                     </PaginationItem>
-                    <PaginationItem>
+                    {/* <PaginationItem>
                         <button 
                             onClick={() => handleTabClick("menções")} 
                             className={`font-medium text-lg ${activeTab === "menções" ? "underline text-azul-twitter" : ""}`}
                         >
                             Menções
                         </button>
-                    </PaginationItem>
+                    </PaginationItem> */}
                 </PaginationContent>
             </Pagination>
             {activeTab === "todos" && (
