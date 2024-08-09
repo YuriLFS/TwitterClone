@@ -41,25 +41,25 @@ export default function TimeLineBody({ ApelidoUsuario,NomeUsuario,QuantComentari
     }
 
     return(
-        <div className="border-y border-gray-600">
+        <div className="border-y border-gray-600 max-lg:w-72">
             <div className="px-3 py-3">
-                <div className="flex pb-2 gap-1">
-                    <img src={FotoPerfil} alt="Foto Usuário" className="rounded-full w-14 h-14" />
+                <div className="flex pb-2 gap-1 max-lg:gap-0">
+                    <img src={FotoPerfil} alt="Foto Usuário" className="rounded-full w-14 h-14 max-lg:w-10 max-lg:h-10" />
                     <div className="px-5 w-full">
                         <div className="flex gap-1 justify-between">
                             <div className="flex gap-2">
-                                <h2 className="font-medium">{ApelidoUsuario}</h2>
-                                <h3>@{NomeUsuario}</h3>
+                                <h2 className="font-medium max-lg:truncate">{ApelidoUsuario}</h2>
+                                <h3 className="max-lg:truncate max-lg:w-28">@{NomeUsuario}</h3>
                             </div>
-                            <button>
+                            <button className="max-lg:hidden">
                                 <DotsThree />
                             </button>
                         </div>
-                        <div className=" w-full max-h-72 overflow-y-auto py-3">
+                        <div className=" w-full max-h-72 overflow-y-auto py-3 max-lg:py-0 max-lg:pb-2">
                             {children}
                         </div>
-                        <div className="flex justify-between">
-                            <div className="flex gap-16">
+                        <div className="flex lg:justify-between max-lg:text-sm max-lg:-ml-14 max-lg:gap-4">
+                            <div className="flex gap-16 max-lg:gap-8">
                                 <div className="flex items-center gap-2">
                                     <button>
                                         <ChatCircle />

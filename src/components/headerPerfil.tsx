@@ -11,7 +11,7 @@ export default function HeaderPerfil() {
     })
 
     return(
-        <div className="space-y-3">
+        <div className="space-y-3 "> {/* eu não tenho a menor ideia de como eu vou passar isso para o mobile,minha cabeça da definhando já e essa não é nem a parte dificil de front end ainda */}
             <div>
                 <img className="h-36 w-full object-cover border-b border-preto-twitter" src="src/assets/leblanc.jpg" alt="Banner" />
                 <div className="flex justify-between px-5">

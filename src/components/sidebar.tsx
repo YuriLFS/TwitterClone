@@ -47,7 +47,9 @@ export default function SideBar() {
                                 :
                                 <House />
                                 }
-                                Home
+                                <p className="max-lg:hidden">
+                                    Home
+                                </p>
                             </a>
                         </button>
                     </div>
@@ -59,20 +61,27 @@ export default function SideBar() {
                             </a>
                         </button>
                     </div> */}
-                    <a href="/notifications" className={`flex items-center text-2xl gap-2 ${isNotificationPage ? "text-blue-500" : ""}`}>
-                        {isNotificationPage ? 
-                        <Bell weight="fill"/>
-                        :
-                        <Bell />
-                        }
-                        
-                        Notifications
-                    </a>
+                    <div>
+                        <button>
+                            <a href="/notifications" className={`flex items-center text-2xl gap-2 ${isNotificationPage ? "text-blue-500" : ""}`}>
+                                {isNotificationPage ? 
+                                <Bell weight="fill"/>
+                                :
+                                <Bell />
+                                }
+                                <p className="max-lg:hidden">
+                                    Notifications
+                                </p>
+                            </a>
+                        </button>
+                    </div>
                     <div>
                         <button>
                         <a href="/message" className={`flex items-center text-2xl gap-2 ${isMessage ? "text-blue-500" : ""}`}>
                                 <Envelope />
-                                Message
+                                <p className="max-lg:hidden">
+                                    Message
+                                </p>
                             </a>
                         </button>
                     </div>
@@ -100,7 +109,9 @@ export default function SideBar() {
                         <button>
                             <a href="/profile" className={`flex items-center text-2xl gap-2 ${isProfile ? "text-blue-500" : ""}`}>
                                 <User />
-                                Profile
+                                <p className="max-lg:hidden">
+                                    Profile
+                                </p>
                             </a>
                         </button>
                     </div>
@@ -108,16 +119,18 @@ export default function SideBar() {
                         <button>
                             <a href="/more" className={`flex items-center text-2xl gap-2 ${isMore ? "text-blue-500" : ""}`}>
                                 <DotsThreeCircle />
-                                More
+                                <p className="max-lg:hidden">
+                                    More
+                                </p>
                             </a>
                         </button>
                     </div>
                 </div>
                 <div className={isHomePage ? '' : 'hidden'} >
-                    <button onClick={onShow} className="w-64 h-12 bg-azul-twitter rounded-full text-xl font-semibold text-white hover:brightness-90">Tweet</button>
+                    <button onClick={onShow} className="w-64 h-12 max-lg:hidden bg-azul-twitter rounded-full text-xl font-semibold text-white hover:brightness-90">Tweet</button>
                 </div>
             </div>
-            <div className={`absolute top-1/4 left-1/3 ${twtShow ? "block" : "hidden"}`}>
+            <div className={`absolute top-1/4 left-1/3 max-lg:hidden ${twtShow ? "block" : "hidden"}`}>
                 <TweetBox isOpen={twtShow} onClose={onClose}/>
             </div>
         </>

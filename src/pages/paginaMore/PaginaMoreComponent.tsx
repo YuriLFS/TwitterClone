@@ -47,11 +47,11 @@ export default function PaginaMoreComponent() {
             <div className="p-3">
                 <input className="rounded-full bg-gray-600/50 w-full px-4 py-2" placeholder="Buscar configuração"/>
             </div>
-            <div>                
+            <div className="max-lg:max-h-[80Vh] overflow-auto">                
                 {opcoes.map((opcao, index) => {
                     return(
                         <Link key={index} target="_blank" to={opcao.link}>
-                            <button className="flex p-5 gap-7 h-28 w-full">
+                            <button className="flex p-5 gap-7 h-28 w-full max-lg:mb-16">
                                 <div className="flex">
                                     {opcao.icone}
                                 </div>

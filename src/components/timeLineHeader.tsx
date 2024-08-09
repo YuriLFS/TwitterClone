@@ -28,7 +28,7 @@ export default function TimeLineHeader({ onPostChange }: TimeLineHeaderProps) {
 
     const publishTweet = async () => {
         try {
-          const response = await fetch('http://localhost:3000/post', {
+          const response = await fetch('http://192.168.3.112:3000/post', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ export default function TimeLineHeader({ onPostChange }: TimeLineHeaderProps) {
       
 
     return(
-        <div className="border-b border-gray-600">
+        <div className="border-b border-gray-600 max-lg:hidden">
             <div className="px-3 py-3">
                 <div className="flex pb-2 gap-1">
                     <img src={"https://github.com/YuriLFS.png"} alt="Foto Usuário" className="rounded-full w-14 h-14" />

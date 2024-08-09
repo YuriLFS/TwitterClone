@@ -19,7 +19,7 @@ export default function PaginaPrincipalComponente({}: Post) {
     const [userPost, setUserPost] = useState<string>(''); // Estado para a publicação do usuário
 
     const fetchPosts = async () => {
-        const response = await fetch('http://localhost:3000/post');
+        const response = await fetch('http://192.168.3.112:3000/post');
         const data = await response.json();
         return data;
     };
@@ -49,7 +49,7 @@ export default function PaginaPrincipalComponente({}: Post) {
             )}
 
             {/* Timeline de outras postagens */}
-            <div className="overflow-y-auto max-h-[calc(81vh-60px)]">
+            <div className="overflow-y-auto max-h-[calc(81vh-60px)] max-lg:max-h-[92Vh]">
                 {posts.map(post => (
                     <TimeLineBody
                         key={post.id}

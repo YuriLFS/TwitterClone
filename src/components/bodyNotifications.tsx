@@ -21,7 +21,7 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
     }
 
     return(
-        <>
+        <div className="overflow-auto max-lg:max-h-[85Vh]">
             {/* Componente para Curtida */}
             <div className="w-full border-b border-gray-600 p-3">
                 <div className="grid grid-cols-12 gap-3">
@@ -40,11 +40,11 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
 
             {/* Componente de Resposta */}
             <div className="w-full border-b border-gray-600 p-3">
-                <div className="grid grid-cols-12 gap-3">
+                <div className="grid grid-cols-12 max-lg:grid-cols-4 gap-3">
                     <div className="col-span-1 flex justify-end">
                         <img src="https://github.com/YuriLFS.png" alt="" className="rounded-full w-14 h-14"/>
                     </div>
-                    <div className="col-span-11 space-y-1">
+                    <div className="col-span-11 max-lg:col-span-3 space-y-1">
                         <div className="justify-between flex">
                             <div>
                                 <div className="flex gap-2">
@@ -65,8 +65,8 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
                             Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto 
                         </div>
 
-                        <div className="flex justify-between">
-                            <div className="flex gap-16">
+                        <div className="flex justify-between max-lg:-ml-16">
+                            <div className="flex gap-16 max-lg:gap-10">
                                 <div className="flex items-center gap-2">
                                     <button>
                                         <ChatCircle />
@@ -108,6 +108,6 @@ export default function BodyNotifications({ ApelidoUsuario,NomeUsuario,QuantCome
                     
                 </div>
             </div>
-        </>
+        </div>
     )
 }
