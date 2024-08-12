@@ -21,6 +21,7 @@ export default function PaginaMessageComponent() {
     
     const [chat, setChat] = useState<Chat[]>([]);
     const [selectedChat, setSelectedChat] = useState<Chat | null>(null);
+    const [showMessages, setShowMessages] = useState(true)
 
     const fetchChat = async () => {
         const response = await fetch('http://192.168.3.112:3000/chat');
@@ -34,6 +35,12 @@ export default function PaginaMessageComponent() {
 
     const handleChatClick = (chatItem: Chat) => {
         setSelectedChat(chatItem);
+        setShowMessages(false);
+    };
+
+    const handleBackToMessages = () => {
+        setSelectedChat(null); // Limpa a mensagem selecionada
+        setShowMessages(true); // Mostra o menu de mensagens
     };
     
     return (
@@ -46,7 +53,7 @@ export default function PaginaMessageComponent() {
                             className={`bg-transparent border-b border-gray-600 flex p-4 cursor-pointer`}
                             onClick={() => handleChatClick(chatItem)}
                         >
-                            <img src={chatItem.FotoPerfil} alt={chatItem.ApelidoUsuario} className="h-12 w-12 rounded-full mr-4" />
+                            <img src={chatItem.FotoPerfil} alt={chatItem.ApelidoUsuario} className="h-12 w-12 object-cover rounded-full mr-4" />
                             <div className="w-full">
                                 <div className="flex gap-2 max-w-72 truncate">
                                     <p>{chatItem.ApelidoUsuario}</p>
@@ -124,34 +131,36 @@ export default function PaginaMessageComponent() {
 
             {/* Versão Mobile */} {/* Eu poderia ter feito um pouco melhor no componente de cima e tals,mas eu to com fome,estressado e com alergia,então não quero pensar tanto */}
             <div className="max-lg:block hidden">
-                <div className={`w-72 max-h-[92Vh] overflow-y-auto ${selectedChat ? "hidden" : ""}`}>         
-                    {chat.map((chatItem, index) => (
-                        <div
-                            key={index}
-                            className={`bg-transparent border-b border-gray-600 flex p-4 cursor-pointer`}
-                            onClick={() => handleChatClick(chatItem)}
-                        >
-                            <img src={chatItem.FotoPerfil} alt={chatItem.ApelidoUsuario} className="h-12 w-12 rounded-full mr-4" />
-                            <div className="w-52">
-                                <div className="flex gap-2 max-w-72 truncate text-sm">
-                                    <p>{chatItem.ApelidoUsuario}</p>
-                                    <p className="text-gray-500">@{chatItem.NomeUsuario}</p>
-                                    <p className="text-gray-500">•</p>
-                                    <p className="text-gray-500">{chatItem.dataConversa}</p>                                                                
-                                </div>
-                                <div>
-                                    <p className="text-sm text-gray-500 truncate max-w-72">{chatItem.mensagemEnviada}</p>                                
+                {showMessages ? (
+                    <div className={`w-72 max-h-[92Vh] overflow-y-auto ${selectedChat ? "hidden" : ""}`}>         
+                        {chat.map((chatItem, index) => (
+                            <div
+                                key={index}
+                                className={`bg-transparent border-b border-gray-600 flex p-4 cursor-pointer`}
+                                onClick={() => handleChatClick(chatItem)}
+                            >
+                                <img src={chatItem.FotoPerfil} alt={chatItem.ApelidoUsuario} className="h-12 w-12 rounded-full mr-4" />
+                                <div className="w-52">
+                                    <div className="flex gap-2 max-w-72 truncate text-sm">
+                                        <p>{chatItem.ApelidoUsuario}</p>
+                                        <p className="text-gray-500">@{chatItem.NomeUsuario}</p>
+                                        <p className="text-gray-500">•</p>
+                                        <p className="text-gray-500">{chatItem.dataConversa}</p>                                                                
+                                    </div>
+                                    <div>
+                                        <p className="text-sm text-gray-500 truncate max-w-72">{chatItem.mensagemEnviada}</p>                                
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                ) : (
                 <div className="w-full col-span-2 border-l border-gray-600">
                     {selectedChat && (
                         <div>
                             <div className="flex justify-between pt-4 pb-2 px-4">
                                 <div className="flex gap-3">
-                                    <button>
+                                    <button onClick={handleBackToMessages}>
                                         <ArrowLeft width={24} height={24} weight="bold"/>
                                     </button>
                                     <div className="flex gap-3 items-center">
@@ -201,6 +210,7 @@ export default function PaginaMessageComponent() {
                         </div>
                     )}
                 </div>
+                )}
             </div>
         </>
     );

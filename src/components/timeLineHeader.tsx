@@ -34,12 +34,12 @@ export default function TimeLineHeader({ onPostChange }: TimeLineHeaderProps) {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              ApelidoUsuario: "Seu Apelido",
-              NomeUsuario: "Seu Nome de Usuario",
+              ApelidoUsuario: "Usuário",
+              NomeUsuario: "Usuário",
               QuantComentarios: 0,
               QuantRePostagem: 0,
               QuantCurtidas: 0,
-              FotoPerfil: "url_da_foto_perfil",
+              FotoPerfil: "https://github.com/YuriLFS.png",
               Tweet: tweetText
             })
           });

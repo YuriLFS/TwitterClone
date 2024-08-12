@@ -5,7 +5,7 @@ import PaginaMessageComponent from "./PaginaMessageComponent";
 export default function PaginaMessage() {
     return(
         <Layout NomeDaPagina="Message">
-            <PaginaMessageComponent ApelidoUsuario="" FotoPerfil="" NomeUsuario="" isSender/>
+            <PaginaMessageComponent />
         </Layout>
     )
 }
